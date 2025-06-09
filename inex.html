@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ورود مشتری</title>
+  <style>
+   @font-face {
+    
+    src: url(IY\ FONT/IRANYEKANBLACK.TTF);
+     font-family: iyb;
+
+   
+  }
+
+     @font-face {
+    
+    src: url(IY\ FONT/IRANYEKANMEDIUM.TTF);
+     font-family: iym;
+
+   
+  }
+  
+ @font-face {
+    
+    src: url(IY\ FONT/IRANYEKANREGULAR.TTF);
+     font-family: iyr;
+
+   
+  }
+
+body { 
+  align-items: center;
+  font-family: iym;
+  direction: rtl;
+  text-align: center;
+  background: #fff7f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  color: #4b2e05;
+  margin: 0;
+}
+
+.form-box {
+  align-items: center;
+  border-radius: 20px;
+  background: #fff3e0;
+  padding: 24px 32px;
+  
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.18);
+  width: 380px;
+  margin-bottom: 32px;
+  border: 2px solid #ffa726;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #bf360c;
+  font-size: 1.1rem;
+}
+
+select, textarea, button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1.8px solid #ffb74d;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #4e342e;
+  background: #fff8e1;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+select:focus, textarea:focus {
+  outline: none;
+  border-color: #ff6f00;
+  box-shadow: 0 0 12px #ff6f00aa;
+  background: #fff3e0;
+}
+
+button {
+  background: #ff6f00;
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px #ff8f0099;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  user-select: none;
+}
+
+button:hover {
+  background: #e65100;
+  box-shadow: 0 6px 18px #e6510099;
+}
+
+.comments-container {
+  max-width: 700px;
+  width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comment-box {
+  background: #fff3e0;
+  border-radius: 16px;
+  padding: 18px 24px;
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.15);
+  border: 2px solid #ffcc80;
+  color: #5d4037;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-header {
+  font-weight: 700;
+  color: #bf360c;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-time {
+  font-size: 0.85rem;
+  color: #bf360ccc;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.comment-food {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #d84315;
+}
+
+.comment-text {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.reply-box {
+  background: #ffe0b2;
+  border-left: 6px solid #fb8c00;
+  padding: 12px 18px;
+  border-radius: 0 16px 16px 0;
+  color: #6d4c41;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  max-width: 90%;
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+.filter-box {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  background: #ffb74d;
+  border: none;
+  border-radius: 30px;
+  color: #4e342e;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 8px #ffb74d88;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #ff6f00;
+  color: white;
+  box-shadow: 0 4px 14px #ff6f0099;
+}
+.form-box{
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50% , -50%);
+  
+}
+
+#name{
+
+  width: 170px;
+  padding: 10px;
+  border: 1px solid orange;
+  border-radius: 10px;
+  font-size: 16px;
+background-color: white;
+
+margin-bottom: 20px;
+
+}
+
+#phone{ width: 170px;
+  padding: 10px;
+  border: 1px solid orange;
+  border-radius: 10px;
+  font-size: 16px;
+background-color: white;
+
+margin-bottom: 20px;
+}
+
+#userForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>خوش آمدید !</h2>
+
+    <h5>نام و تلفن همراه خود را وارد کنید</h5>
+
+    <form id="userForm">
+      <label for="name">نام:</label>
+      <input type="text" id="name" required />
+
+      <label for="phone">شماره موبایل:</label>
+      <input type="tel" id="phone" required pattern="09[0-9]{9}" />
+
+      <button type="submit">ادامه</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("userForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      
+      // ذخیره موقت در localStorage (فعلاً، تا بعد Firebase وصل کنیم)
+      localStorage.setItem("userName", name);
+      localStorage.setItem("userPhone", phone);
+
+      // انتقال به صفحه نظردهی (که بعد می‌سازیم)
+      window.location.href = "feedback.html";
+    });
+  </script>
+</body>
+</html>

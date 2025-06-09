@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ثبت نظر</title>
+  <style>
+
+    @font-face {
+
+      src: url(IY\ FONT/IRANYEKANBLACK.TTF);
+     font-family: iyb;
+
+   
+  }
+
+     @font-face {
+    
+    src: url(IY\ FONT/IRANYEKANMEDIUM.TTF);
+     font-family: iym;
+
+   
+  }
+  
+ @font-face {
+    
+    src: url(IY\ FONT/IRANYEKANREGULAR.TTF);
+     font-family: iyr;
+
+   
+  }
+
+   body {
+  font-family:Iym;
+  direction: rtl;
+  background: #fff7f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  color: #4b2e05;
+  margin: 0;
+}
+
+.form-box {
+    
+  background: #fff3e0;
+  padding: 24px 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.18);
+  width: 380px;
+  margin-bottom: 32px;
+  border: 2px solid #ffa726;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #bf360c;
+  font-size: 1.1rem;
+}
+
+select, textarea, button {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1.8px solid #ffb74d;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #4e342e;
+  background: #fff8e1;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+select:focus, textarea:focus {
+  outline: none;
+  border-color: #ff6f00;
+  box-shadow: 0 0 12px #ff6f00aa;
+  background: #fff3e0;
+}
+
+button {
+  background: #ff6f00;
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px #ff8f0099;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  user-select: none;
+}
+
+button:hover {
+  background: #e65100;
+  box-shadow: 0 6px 18px #e6510099;
+}
+
+.comments-container {
+  max-width: 700px;
+  width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comment-box {
+  background: #fff3e0;
+  border-radius: 20px;
+  padding: 20px 40px;
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.15);
+  border: 2px solid #ffcc80;
+  color: #5d4037;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.comment-header {
+  font-weight: 700;
+  color: #bf360c;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-time {
+  font-size: 0.85rem;
+  color: #bf360ccc;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.comment-food {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #d84315;
+}
+
+.comment-text {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.reply-box {
+  background: #ffe0b2;
+  border-left: 6px solid #fb8c00;
+  padding: 12px 18px;
+  border-radius: 0 16px 16px 0;
+  color: #6d4c41;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  max-width: 90%;
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+.filter-box {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  background: #ffb74d;
+  border: none;
+  border-radius: 30px;
+  color: #4e342e;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 8px #ffb74d88;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #ff6f00;
+  color: white;
+  box-shadow: 0 4px 14px #ff6f0099;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="form-box">
+  <h3>ثبت نظر درباره غذا</h3>
+  <form id="feedbackForm">
+    <label for="food">انتخاب غذا:</label>
+    <select id="food" required>
+      <option value="">-- انتخاب کن --</option>
+      <option value="پیتزا">پیتزا</option>
+      <option value="برگر">برگر</option>
+      <option value="پاستا">پاستا</option>
+      <option value="پاستا">ساندویچ</option>
+      <option value="نوشیدنی">نوشیدنی</option>
+    </select>
+
+    <label for="comment">نظر شما:</label>
+    <textarea id="comment" rows="4" required></textarea>
+
+    <button type="submit">ارسال نظر</button>
+  </form>
+</div>
+
+<div class="comments-box">
+  <h3>نظرات کاربران</h3>
+  <label for="sortOrder">مرتب‌سازی بر اساس:</label>
+  <select id="sortOrder">
+    <option value="newest">جدیدترین</option>
+    <option value="oldest">قدیمی‌ترین</option>
+  </select>
+  <div id="commentsContainer">در حال بارگذاری...</div>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+  import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbTc5sKXUi-GfWgP26fiKFf-vAh-Sp278",
+    authDomain: "shaboone-survey.firebaseapp.com",
+    databaseURL: "https://shaboone-survey-default-rtdb.firebaseio.com",
+    projectId: "shaboone-survey",
+    storageBucket: "shaboone-survey.appspot.com",
+    messagingSenderId: "352245920169",
+    appId: "1:352245920169:web:1c7000e3278de1a013d4b8"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  const feedbackForm = document.getElementById("feedbackForm");
+  const commentsContainer = document.getElementById("commentsContainer");
+  const sortOrderSelect = document.getElementById("sortOrder");
+
+  feedbackForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const food = document.getElementById("food").value;
+    const comment = document.getElementById("comment").value;
+    const name = localStorage.getItem("userName") || "مشتری عزیز";
+    const phone = localStorage.getItem("userPhone") || "بدون شماره";
+
+    const newRef = push(ref(db, "feedbacks"));
+    set(newRef, {
+      name,
+      phone,
+      food,
+      comment,
+      time: new Date().toISOString()
+    }).then(() => {
+      alert("نظر شما با موفقیت ذخیره شد!");
+      feedbackForm.reset();
+    }).catch((error) => {
+      alert("خطا در ذخیره نظر: " + error.message);
+      console.error(error);
+    });
+  });
+
+  function renderComments(data, order = "newest") {
+    commentsContainer.innerHTML = "";
+    if (!data) {
+      commentsContainer.innerHTML = "هیچ نظری ثبت نشده.";
+      return;
+    }
+
+    const entries = Object.entries(data);
+    if (order === "newest") entries.reverse();
+
+    for (const [key, fb] of entries) {
+      const box = document.createElement("div");
+      box.className = "comment-box";
+      box.innerHTML = `
+        <p><strong>${fb.name}</strong> درباره <strong>${fb.food}</strong> گفت:</p>
+        <p>${fb.comment}</p>
+        ${fb.reply ? `<div class="reply"><strong>پاسخ:</strong> ${fb.reply}</div>` : ""}
+        <hr/>
+      `;
+      commentsContainer.appendChild(box);
+    }
+  }
+
+  function loadCommentsOnce() {
+    onValue(ref(db, "feedbacks"), snapshot => {
+      renderComments(snapshot.val(), sortOrderSelect.value);
+    }, { onlyOnce: true });
+  }
+
+  // First load
+  loadCommentsOnce();
+
+  // When sort order changes
+  sortOrderSelect.addEventListener("change", () => {
+    loadCommentsOnce();
+  });
+</script>
+
+</body>
+</html>
